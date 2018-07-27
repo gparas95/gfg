@@ -3,10 +3,24 @@ using namespace std;
 
 void print_sumaxarray(int A[], int s)
 {
-	for(int i=0; i<s; i++)
+	int sum= A[0];
+	int max_sum = A[0];
+	for(int i=1; i<s; i++)
 	{
-		cout<<A[i];
+		
+		if(A[i-1]<0 && A[i]>0)
+		{
+			if(sum+A[i]>A[i])
+				sum= sum + A[i];
+			else
+				sum = A[i];
+		}
+		else
+			sum = sum + A[i];
+		if(sum>=max_sum)
+			max_sum = sum;
 	}
+	cout<<max_sum<<endl;
 }
 int main(int argc, char const *argv[])
 {
