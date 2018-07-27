@@ -14,16 +14,18 @@ int main(int argc, char const *argv[])
 	cin>>T;
 	if(T<1 || T>200)
 		return -1;
+	//cout<<T;
 	while(T)
 	{
 		cin>>N;
 		if(N<1 || N>1000)
 			return -1;
+		//cout<<N;
 		int A[N];
 		for(int i=0; i<N-1; i++)
 		{
 			cin>>A[i];
-			if(A[i]<-100 || A[i]>100)
+			if(A[i]<1 || A[i]>1000)
 				return -1;
 		}
 		missing_number(A,N);
